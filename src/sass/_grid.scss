@@ -1,0 +1,33 @@
+$susy: ( math: math, gutter-position: split, gutters: .25, debug: ( image: hide, color: rgba(50, 100, 150, 0.05), output: background, toggle: top right, ));
+$c6: ( columns: 6);
+$c8: ( columns: 8);
+$c12: ( columns: 12);
+$c18: ( columns: 18);
+$c24: ( columns: 24);
+$s-320: 0 750px;
+$s-768: 641px 992px;
+$s-960: 993px 1200px;
+$s-1201: 1201px 1600px;
+$s-1601: 1601px 1920px;
+$s-1921: 1921px;
+.container {
+    @include container;
+    @include susy-breakpoint($s-320, $c8) {
+        @include container;
+    }
+    @include susy-breakpoint($s-768, $c12) {
+        @include container(736px);
+    }
+    @include susy-breakpoint($s-960, $c12) {
+        @include container(928px);
+    }
+    @include susy-breakpoint($s-1201, $c18) {
+        @include container(1120px);
+    }
+    @include susy-breakpoint($s-1601, $c24) {
+        @include container(1340px);
+    }
+    @include susy-breakpoint($s-1921, $c24) {
+        @include container(1600px);
+    }
+}
